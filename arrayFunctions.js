@@ -9,8 +9,11 @@
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
 function isArrayLengthOdd(numbers) {
-  // Your code here
+	// Your code here
+	return numbers.length % 2 !== 0 ? true : false;
 }
+
+isArrayLengthOdd([1, 2, 3]);
 
 /**
  * isArrayLengthEven(numbers):
@@ -23,8 +26,11 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
 function isArrayLengthEven(numbers) {
-  // Your code here
+	// Your code here
+	return numbers.length % 2 === 0 ? true : false;
 }
+
+isArrayLengthEven([1, 2, 3]);
 
 /**
  * addLailaToArray(instructors):
@@ -35,8 +41,13 @@ function isArrayLengthEven(numbers) {
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
 function addLailaToArray(instructors) {
-  // Your code here
+	// Your code here
+	let instructorsArray = instructors;
+	instructorsArray.push("Laila");
+	return instructorsArray;
 }
+
+addLailaToArray(["Mshary", "Hasan"]);
 
 /**
  * eliminateTeam(teams):
@@ -47,8 +58,12 @@ function addLailaToArray(instructors) {
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
-  // Your code here
+	// Your code here
+	let teamsArray = teams;
+	return teamsArray[teamsArray.length - 1];
 }
+
+eliminateTeam(["Brazil", "Germany", "Italy"]);
 
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
@@ -61,8 +76,14 @@ function eliminateTeam(teams) {
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
-  // Your code here
+	// Your code here
+	const emptyArray = [];
+	const halfArray = Math.ceil(fruits.length / 2);
+	const secoundHalf = fruits.slice(-halfArray);
+	return fruits.length % 2 === 0 ? secoundHalf : emptyArray;
 }
+
+secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]);
 
 /**
  * youGottaCalmDown(shout):
@@ -79,14 +100,19 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  */
 function youGottaCalmDown(shout) {
-  // Your code here
+	// Your code here
+	let shoutArray = [shout];
+	const index = shoutArray[0].indexOf("!!") + 1;
+	return shoutArray[0].slice(0, index);
 }
 
+youGottaCalmDown("HI!!!!!!!!!!!!!");
+
 module.exports = {
-  isArrayLengthOdd,
-  isArrayLengthEven,
-  addLailaToArray,
-  eliminateTeam,
-  secondHalfOfArrayIfItIsEven,
-  youGottaCalmDown,
+	isArrayLengthOdd,
+	isArrayLengthEven,
+	addLailaToArray,
+	eliminateTeam,
+	secondHalfOfArrayIfItIsEven,
+	youGottaCalmDown,
 };
